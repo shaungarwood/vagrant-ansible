@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: CLI tools.
+    package:
+      name:
+      - vim
+      - git
+      - tree
+  - name: Networking tools.
+    package:
+      name:
+      - telnet
+      - curl
+      - wget
+      - nmap-ncat
