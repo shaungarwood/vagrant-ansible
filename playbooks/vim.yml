@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: Ensure vim is installed.
+    package: name=vim state=present
+    become: yes
+
+  - name: Copy vimrc file
+    copy:
+      src: ./myfiles/.vimrc
+      dest: ~/.vimrc
+      mode: '0644'
